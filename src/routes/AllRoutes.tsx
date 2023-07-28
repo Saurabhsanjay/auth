@@ -1,5 +1,6 @@
 import  { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import Loader from "../components/Loader";
 
 
 const LogIn = lazy(() => import("../pages/Login"));
@@ -13,7 +14,7 @@ const AllRoutes = () => {
       <Route
         path="/login"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader/>}>
            
             <LogIn />
           </Suspense>
@@ -23,7 +24,7 @@ const AllRoutes = () => {
         path="/"
         element={
             <PrivateRoute>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader/>}>
               <Home />
           </Suspense>
             </PrivateRoute>
@@ -32,7 +33,7 @@ const AllRoutes = () => {
       <Route
         path="/signup"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader/>}>
             
             <Signup />
           </Suspense>
