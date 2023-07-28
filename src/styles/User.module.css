@@ -1,0 +1,136 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.loginSection {
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loginContainer {
+  text-align: center;
+}
+
+.loginHeading {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  background-image: url("https://cdn.pixabay.com/photo/2016/12/06/01/26/colour-1885352_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+  text-align: start;
+}
+
+.formInput {
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  text-align: left;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #2c974b;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginLink {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.loginLink a {
+  color: #2c974b;
+  text-decoration: none;
+}
+.submitButton:disabled {
+  background-color: #6ad475;
+  cursor: not-allowed;
+}
+
+.passwordInputContainer {
+  position: relative;
+}
+
+.passwordToggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.googleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #db4437;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.googleButton:hover {
+  background-color: #c33a2b;
+}
+
+.googleButton svg {
+  margin-right: 10px;
+}
+
+.orContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.orText {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #777;
+}
