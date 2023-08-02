@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../config/firebase";
-import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineGoogle } from "react-icons/ai";
-import styles from "../styles/User.module.css";
-import { LoginState } from "../types/user";
+import { auth, provider } from "../../config/firebase";
+import {
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  AiOutlineGoogle,
+} from "react-icons/ai";
+import styles from "../../styles/User.module.css";
+import { LoginState } from "../../types/user";
 import { toast } from "react-toastify";
-
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +19,7 @@ const Login: React.FC = () => {
     password: "",
   });
 
-  const [showPassword, setShowPassword] = useState<boolean>(false); 
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const { email, password } = formData;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,17 +31,12 @@ const Login: React.FC = () => {
     e.preventDefault();
 
     try {
-      const userCreds = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      
+      const userCreds = await signInWithEmailAndPassword(auth, email, password);
+
       const user = userCreds.user;
       console.log(user);
-       toast.success("Logged In successfully!");
-      navigate("/");
-
+      toast.success("Logged In successfully!");
+      navigate("/news");
     } catch (error: any) {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -52,7 +50,7 @@ const Login: React.FC = () => {
       } else {
         toast.error("Error while logging In.");
       }
-      console.log(error,errorCode, errorMessage);
+      console.log(error, errorCode, errorMessage);
     }
   };
 
@@ -61,22 +59,18 @@ const Login: React.FC = () => {
   };
 
   // Signed in with Google
- const handleGoogleSignIn = async () => {
-   
-   try {
-     const userCreds = await signInWithPopup(auth, provider);
-     const user = userCreds.user;
-     console.log(user);
-     navigate("/"); 
-   } catch (error: any) {
-     const errorCode = error.code;
-     const errorMessage = error.message;
-     console.log(errorCode, errorMessage);
-   }
- };
- 
-
-
+  const handleGoogleSignIn = async () => {
+    try {
+      const userCreds = await signInWithPopup(auth, provider);
+      const user = userCreds.user;
+      console.log(user);
+      navigate("/news");
+    } catch (error: any) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    }
+  };
 
   return (
     <main className={styles.mainContainer}>
@@ -85,18 +79,12 @@ const Login: React.FC = () => {
           <h1 className={styles.loginHeading}>Login</h1>
           <form className={styles.loginForm} onSubmit={onSubmit}>
             <div className={styles.formGroup}>
-              <label
-              
-                htmlFor="email-address"
-              >
-                Email address
-              </label>
+              <label htmlFor="email-address">Email address</label>
               <input
                 type="email"
                 name="email"
                 value={email}
                 onChange={handleChange}
-               
                 required
                 placeholder="Email address"
                 className={styles.formInput}

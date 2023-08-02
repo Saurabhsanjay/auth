@@ -5,10 +5,14 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-import { auth } from "../config/firebase";
-import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineGoogle } from "react-icons/ai"; 
-import styles from "../styles/User.module.css";
-import { SignupState } from "../types/user";
+import { auth } from "../../config/firebase";
+import {
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  AiOutlineGoogle,
+} from "react-icons/ai";
+import styles from "../../styles/User.module.css";
+import { SignupState } from "../../types/user";
 import { toast } from "react-toastify";
 
 const Signup: React.FC = () => {
@@ -45,7 +49,7 @@ const Signup: React.FC = () => {
       toast.success("Signup successfully!");
     } catch (error: any) {
       const errorCode = error.code;
-       toast.error(`${error.message}`);
+      toast.error(`${error.message}`);
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
     }

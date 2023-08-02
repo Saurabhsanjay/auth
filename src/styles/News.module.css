@@ -1,0 +1,258 @@
+.mainContainer {
+
+  width: 70%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  margin: auto;
+  
+}
+.news2Container {
+
+  width: 90%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin: auto;
+ 
+}
+
+.newsContainer {
+  width: 100%;
+  height: fit-content;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.heading {
+  color: red;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 20px;
+}
+
+.infoContainer {
+  display: flex;
+  width: 100%;
+}
+
+.infoContainer div:first-child {
+  flex-basis: 80%;
+  padding: 5px 20px;
+  
+}
+
+.infoContainer div:nth-child(2) {
+  flex-basis: 20%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoContainer div:nth-child(2) img {
+  width: 100%;
+  max-width: 200px; 
+  height: auto; 
+  border-radius: 10px;
+}
+
+.infoContainer div:first-child p {
+  text-align: start;
+  margin-top: 12px;
+  line-height: 25px;
+}
+
+.infoContainer div:first-child h3 {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+
+.button{
+   display: flex;
+    justify-content: flex-end;
+    padding: 10px 100px;
+}
+   .button  button{
+   
+      background-color: #3498db;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button button:hover {
+      background-color: #2980b9;
+    }
+
+/* Regular styles for .movie_card */
+.movie_card {
+  display: flex;
+flex-direction: column;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  height: fit-content;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.movie_card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  height: 150px;
+}
+
+.movie_details {
+  height: 100px; 
+  overflow: hidden; 
+}
+
+.movie_details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+   display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+}
+
+.movie_details p {
+  font-size: 14px;
+  margin: 5px 0;
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+.mainContainer {
+
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  margin: auto;
+  
+}
+.news2Container {
+
+  width: 80%;
+  height: fit-content;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  
+  
+}
+
+.infoContainer div:first-child {
+  
+  padding: 0px 10px;
+ 
+}
+
+.infoContainer div:nth-child(2) img {
+  
+  width: 100px; 
+
+  height: auto; 
+  border-radius: 5px;
+}
+
+.infoContainer div:first-child p {
+  text-align: start;
+  font-size: 11px;
+  margin-top: 10px;
+  line-height: 17px;
+  display: none;
+}
+
+.infoContainer div:first-child h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+.heading{
+  font-size: 12px;
+}
+
+.button{
+   display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px;
+}
+   .button  button{
+   
+      
+      padding: 10px 10px;
+     
+      font-size: 12px;
+     
+    }
+    
+}
+
+
+
+
+/* For screens with a width less than or equal to 480px (smaller mobile devices) */
+@media (max-width: 480px) {
+  .mainContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .news2Container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* For screens with a width between 481px and 768px (tablets and laptops) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .mainContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .news2Container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .infoContainer div:first-child p {
+  text-align: start;
+  font-size: 11px;
+  margin-top: 10px;
+  line-height: 17px;
+  display: block;
+}
+}
+
+/* For screens with a width greater than 768px (larger laptops and desktops) */
+@media (min-width: 769px) {
+  .mainContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .news2Container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

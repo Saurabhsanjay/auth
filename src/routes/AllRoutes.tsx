@@ -1,10 +1,10 @@
-import  { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Loader from "../components/Loader";
+import NewsPage from "../pages/news/NewsPage";
 
-
-const LogIn = lazy(() => import("../pages/Login"));
-const Signup = lazy(() => import("../pages/SignUp"));
+const LogIn = lazy(() => import("../pages/auth/Login"));
+const Signup = lazy(() => import("../pages/auth/SignUp"));
 const Home = lazy(() => import("../pages/Home"));
 const PrivateRoute = lazy(() => import("../components/PrivateRoute"));
 
@@ -14,8 +14,7 @@ const AllRoutes = () => {
       <Route
         path="/login"
         element={
-          <Suspense fallback={<Loader/>}>
-           
+          <Suspense fallback={<Loader />}>
             <LogIn />
           </Suspense>
         }
@@ -23,22 +22,37 @@ const AllRoutes = () => {
       <Route
         path="/"
         element={
-            <PrivateRoute>
-          <Suspense fallback={<Loader/>}>
+          <PrivateRoute>
+            <Suspense fallback={<Loader />}>
               <Home />
-          </Suspense>
-            </PrivateRoute>
+            </Suspense>
+          </PrivateRoute>
         }
       />
       <Route
         path="/signup"
         element={
-          <Suspense fallback={<Loader/>}>
-            
+          <Suspense fallback={<Loader />}>
             <Signup />
           </Suspense>
         }
       />
+      <Route
+        path="/news"
+        element={
+          <Suspense fallback={<Loader />}>
+            <NewsPage />
+          </Suspense>
+        }
+      />
+      {/* <Route
+        path="/news/:id"
+        element={
+          <Suspense fallback={<Loader />}>
+            <NewsPage />
+          </Suspense>
+        }
+      /> */}
     </Routes>
   );
 };
